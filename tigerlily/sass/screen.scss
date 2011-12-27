@@ -1,0 +1,58 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+@import "compass/css3/transform-legacy";
+
+$dark: #E4541E;
+$normal: #f66a24;
+$light: #fb9a46;
+
+h1{
+  background-color: #dfdfdf;
+  padding: 5px;
+  color: #888;
+  font-family: Helvetica;
+  font-size: 10px;
+  border-bottom: 1px solid #ccc;
+  strong{ font-weight: bold; }
+}
+
+#logo{
+  width: 600px;
+  border: 1px solid #dedede;
+  margin: 100px auto;
+  position: relative;
+}
+
+.petal{
+  width: 300px;
+  height: 60px;
+}
+
+#left-petal{
+  @include rotate(100deg);
+  .inside-circle{
+    background-color: $dark;
+  }
+}
+
+.inside-circle{
+  width: 300px;
+  height: 300px;
+  @include border-radius(1000px);
+  background-color: red;
+}
+
+.petal-part{
+  width: 300px;
+  height: 30px;
+  overflow: hidden;
+}
+.right-petal{
+  @include rotate(180deg);
+  margin-top: -1px;
+}
