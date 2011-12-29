@@ -11,6 +11,9 @@ $dark: #E4541E;
 $normal: #f66a24;
 $light: #fb9a46;
 
+body{
+  background: url(../images/bg.png);
+}
 h1{
   background-color: #dfdfdf;
   padding: 5px;
@@ -26,17 +29,43 @@ h1{
   border: 1px solid #dedede;
   margin: 100px auto;
   position: relative;
+  height: 300px;
+  background-color: #eee;
 }
 
 .petal{
   width: 300px;
-  height: 60px;
+  height: 90px;
+  position: absolute;
 }
 
 #left-petal{
-  @include rotate(100deg);
+  z-index: 100;
+  top: 102px;
+  left: 84px;
+  @include rotate(45deg);
   .inside-circle{
     background-color: $dark;
+  }
+}
+
+#center-petal{
+  z-index: 50;
+  top: 70px;
+  left: 160px;
+  @include rotate(90deg);
+  .inside-circle{
+    background-color: $normal;
+  }
+}
+
+#right-petal{
+  z-index: 10;
+  top: 71px;
+  left: 180px;
+  @include rotate(100deg);
+  .inside-circle{
+    background-color: $light;
   }
 }
 
@@ -49,7 +78,7 @@ h1{
 
 .petal-part{
   width: 300px;
-  height: 30px;
+  height: 45px;
   overflow: hidden;
 }
 .right-petal{
